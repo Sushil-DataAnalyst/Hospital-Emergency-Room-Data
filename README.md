@@ -3,6 +3,9 @@
 ## 🏥 Project Overview
 This project focuses on analyzing Hospital Emergency Room  operational data to gain insights into patient flow, treatment efficiency, and overall healthcare delivery. I have processed raw healthcare data and transformed it into an interactive Excel dashboard to help hospital administrators make data-driven decisions.
 
+![Hosiptal-Dashboard](Hospital-Dashboard.png)
+
+
 ## 🛠️ Tech Stack & Tools
 - **Microsoft Excel:** Data Cleaning, Pivot Tables, and Dashboard Design.
 - **Power Query:** Data Transformation and Normalization.
