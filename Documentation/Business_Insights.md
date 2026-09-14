@@ -2,75 +2,83 @@
 
 ## Executive Summary
 
-The Hospital ER dashboard converts patient-level operational data into a management-oriented reporting view using **Excel + Power Query**.
+The Hospital ER dashboard converts **9,216 patient visits** into a management-oriented reporting view using **Excel + Power Query**.
 
-Current dashboard KPIs:
+### Current Dashboard KPIs
 
-- **479 patients** analyzed
-- **34.90 minutes** average wait time
-- **5.30/10** patient satisfaction
-- **43%** treated on time
-- **57%** experienced treatment delays
-
----
-
-## 1. Treatment Timeliness
-
-### Finding
-The dashboard shows that **57% of patients experienced treatment delays**, while 43% were treated on time.
-
-### Business implication
-Treatment timeliness is the strongest operational signal in this dashboard. Management can use this KPI to investigate whether delays are associated with peak patient load, department capacity, staffing, or process bottlenecks.
+- **9,216** total patients
+- **35.26 minutes** average wait time
+- **4.99/10** average patient satisfaction
+- **50.04%** admitted
+- **49.96%** not admitted
+- **59.32%** seen within 30 minutes
+- **40.68%** delayed beyond 30 minutes
+- **3,816** patients referred
 
 ---
 
-## 2. Waiting Time
+## 1. Waiting Time & Service Timeliness
 
 ### Finding
-Average patient waiting time is **34.90 minutes** in the current dashboard view.
+Average wait time is **35.26 minutes**. **59.32%** of patients were seen within 30 minutes, while **40.68%** were outside the 30-minute target window.
 
 ### Business implication
-Waiting time should be monitored together with patient volume and treatment timeliness. A rising wait time during high-volume periods can indicate a capacity or workflow constraint.
+Waiting-time performance should be monitored against patient volume and peak-hour demand. Staffing, triage flow, and process bottlenecks are potential areas for operational investigation.
+
+---
+
+## 2. Admission Pattern
+
+### Finding
+The dashboard shows an almost even admission split:
+
+- **50.04% admitted**
+- **49.96% not admitted**
+
+### Business implication
+The near 50–50 admission pattern makes patient-flow and capacity planning important. Management can compare admission demand with daily and hourly patient volume.
 
 ---
 
 ## 3. Patient Satisfaction
 
 ### Finding
-The current patient satisfaction score is **5.30/10**.
+Average patient satisfaction is **4.99/10**.
 
 ### Business implication
-Patient satisfaction adds an experience-focused KPI to the operational analysis. Comparing satisfaction with wait time and treatment delays can help management understand whether service bottlenecks are affecting patient experience.
+Satisfaction should be interpreted together with waiting time and treatment timeliness. Improving service speed may help address patient-experience gaps, although satisfaction can also be influenced by other factors.
 
 ---
 
-## 4. Department Workload
+## 4. Department Referral Workload
 
 ### Finding
-**General Practice** has the highest patient volume in the current analysis, followed by Cardiology and Physiotherapy.
+**3,816 patients** were referred to departments. General Practice is the largest referral category, followed by Orthopedics, Physiotherapy, and Cardiology.
 
 ### Business implication
-High-volume departments may require closer capacity and staffing analysis, especially during periods of elevated ER demand.
+Referral distribution can help management identify departments that require closer workload, staffing, and capacity analysis.
+
+A large **no-referral** segment is also useful for understanding the proportion of ER visits handled without departmental referral.
 
 ---
 
 ## 5. Patient Demographics
 
 ### Finding
-The dashboard provides age and gender segmentation. The current view shows approximately **51% male and 49% female** patients, with patients distributed across age groups from 0 to 79.
+The dashboard provides age, gender, and race segmentation. The gender split is approximately **51% male and 49% female**.
 
 ### Business implication
-Demographic segmentation helps management understand the composition of ER demand and can support more targeted operational planning.
+Demographic segmentation helps management understand the composition of ER demand and identify patient groups contributing most to overall volume.
 
 ---
 
-## 6. Time-Based Patient Flow
+## 6. Time & Peak-Demand Analysis
 
 ### Finding
-The dashboard supports filtering by year and month and uses trend visuals to examine patient-flow changes over time.
+The dashboard supports year/month filtering and day/hour analysis of patient visits.
 
 ### Business implication
-Time-based analysis can help identify recurring high-demand periods and support staffing/capacity planning.
+Peak-period analysis can support staffing and resource planning by identifying when ER demand is highest.
 
 ---
 
@@ -78,21 +86,23 @@ Time-based analysis can help identify recurring high-demand periods and support 
 
 The project demonstrates a practical analytics pipeline:
 
-`Raw Data → Power Query Transformation → Structured Data → Excel Analysis → Dashboard → Business Insight`
+`Raw Data → Power Query Transformation → Structured Data → Excel Analysis → KPI Dashboard → Business Insight`
 
-This is important because the dashboard is not only a visualization exercise. The project demonstrates **data preparation + analysis + reporting + interpretation**.
+This demonstrates **data preparation + analysis + reporting + interpretation**, rather than dashboard design alone.
 
 ---
 
 ## 8. Management Questions This Dashboard Can Answer
 
-- How many patients are being handled?
-- How long are patients waiting?
-- What percentage of patients are treated on time?
-- Which departments have the highest workload?
+- How many patients visited the ER?
+- What is the average waiting time?
+- What percentage are seen within the 30-minute target?
+- What percentage of patients are admitted?
+- How many patients are referred to departments?
+- Which departments receive the highest referral workload?
 - How satisfied are patients?
-- How does patient volume change over time?
-- Which patient demographics contribute to demand?
+- When are peak patient periods?
+- Which demographics contribute most to ER demand?
 - Where should management investigate operational bottlenecks?
 
 ---
@@ -101,4 +111,4 @@ This is important because the dashboard is not only a visualization exercise. Th
 
 This project demonstrates practical skills relevant to **MIS Executive, Reporting Analyst, Data Analyst, Operations Analyst, and Business Analyst** roles.
 
-The strongest part of the project is the combination of **Power Query data transformation + Excel dashboarding + operational business interpretation**.
+The strongest part of the project is the combination of **Power Query data transformation + Excel dashboarding + KPI analysis + operational business interpretation**.
