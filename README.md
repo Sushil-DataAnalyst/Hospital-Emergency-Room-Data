@@ -1,6 +1,6 @@
 # 🏥 Hospital Emergency Room Analytics | Excel + Power Query
 
-> **Interactive healthcare operations dashboard for patient flow, waiting time, satisfaction, departmental workload, admissions, and service efficiency.**
+> **Interactive healthcare operations dashboard for patient flow, waiting time, satisfaction, admissions, referrals, and service efficiency.**
 
 ![Excel](https://img.shields.io/badge/Microsoft%20Excel-Data%20Analysis-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)
 ![Power Query](https://img.shields.io/badge/Power%20Query-Data%20Transformation-742774?style=for-the-badge)
@@ -9,9 +9,9 @@
 
 ## 📊 Project Overview
 
-This project analyzes **Hospital Emergency Room (ER) operational data** and converts patient-level records into an interactive Excel dashboard for management-oriented reporting.
+This project analyzes **9,216 Emergency Room patient visits** and converts patient-level operational data into an interactive Excel dashboard for management-focused reporting.
 
-The project combines **Power Query for data transformation and normalization** with Excel-based analysis, PivotTables, interactive filters, charts, sparklines, and conditional formatting.
+The project combines **Power Query for data transformation and normalization** with Excel analysis, PivotTables, interactive filters, charts, and KPI reporting.
 
 ### Business Flow
 
@@ -27,10 +27,10 @@ The dashboard is designed to help hospital administrators understand:
 - Waiting-time performance
 - On-time vs delayed treatment
 - Patient satisfaction
-- Department-level demand
 - Admission patterns
+- Department referrals
 - Demographic distribution
-- Time-based patient flow
+- Peak day/hour patient flow
 
 The focus is on **turning operational healthcare data into actionable management information**, rather than simply presenting charts.
 
@@ -48,15 +48,18 @@ The focus is on **turning operational healthcare data into actionable management
 
 ## 📌 Key Dashboard Metrics
 
-| KPI | Current Dashboard View |
+| KPI | Dashboard Value |
 |---|---:|
-| 👥 Patients Analyzed | **479** |
-| ⏱️ Average Wait Time | **34.90 min** |
-| ⭐ Patient Satisfaction | **5.30 / 10** |
-| ✅ Treated On Time | **43%** |
-| ⚠️ Treatment Delayed | **57%** |
+| 👥 Total Patients | **9,216** |
+| ⏱️ Average Wait Time | **35.26 min** |
+| ⭐ Patient Satisfaction | **4.99 / 10** |
+| 🏥 Admitted | **50.04%** |
+| 🚫 Not Admitted | **49.96%** |
+| 🎯 Seen Within 30 Min | **59.32%** |
+| ⚠️ Delayed Beyond 30 Min | **40.68%** |
+| 🔁 Patients Referred | **3,816** |
 
-> KPI values represent the current/default dashboard view and may change with filters.
+> KPI values represent the full dashboard dataset and can change when interactive filters are applied.
 
 ---
 
@@ -64,67 +67,81 @@ The focus is on **turning operational healthcare data into actionable management
 
 ### 👥 Patient Flow & Volume
 
-- Total patient volume
-- Peak-hour analysis
-- Monthly/yearly patient trends
-- Admission vs non-admission patterns
+- **9,216** total ER visits
+- Monthly and yearly patient trends
+- Peak day and hour analysis
+- Day × hour operational patterns
 
 ### ⏱️ Waiting Time & Service Efficiency
 
-- Average patient wait time
-- Wait-time trend monitoring
-- On-time vs delayed treatment
-- Identification of potential service bottlenecks
+- **35.26 minutes** average wait time
+- **59.32%** of patients seen within 30 minutes
+- **40.68%** experienced delays beyond 30 minutes
+- Wait-time performance monitoring
 
-### 🏥 Department Performance
+### 🏥 Admission & Referral Analysis
 
-The dashboard compares patient workload across departments, with **General Practice** identified as the highest-volume department in the current analysis, followed by Cardiology and Physiotherapy.
+- **50.04%** of patients admitted
+- **49.96%** not admitted
+- **3,816** patients referred to departments
+- Department-level referral workload analysis
+
+### 🩺 Department Performance
+
+The referral analysis highlights **General Practice** as the highest-volume referral department, followed by **Orthopedics**, **Physiotherapy**, and **Cardiology**.
+
+The dashboard also highlights the large number of patients with **no department referral**, creating an important operational segment for further investigation.
 
 ### ⭐ Patient Satisfaction
 
-Patient satisfaction is monitored alongside operational KPIs, helping connect service efficiency with patient experience.
+The overall patient satisfaction score is **4.99/10**, providing an experience-focused KPI that can be analyzed alongside waiting time, referrals, and treatment timeliness.
 
 ### 👤 Demographic Analysis
 
-- Age-group distribution
 - Gender distribution
+- Age-group distribution
 - Patient segmentation
+- Race distribution
+
+The dataset shows an approximately **51% male / 49% female** split.
 
 ### 📅 Time-Based Analysis
 
-Interactive time filters allow the user to investigate performance across years and months and identify changes in patient flow.
+Interactive year/month filters and day/hour analysis help identify changes in patient demand and potential peak-period staffing requirements.
 
 ---
 
 ## 💡 Business Insights
 
-### 1. Treatment delays are the key operational signal
+### 1. Waiting-time performance needs attention
 
-The dashboard shows **57% of patients experiencing treatment delays**, compared with 43% treated on time.
+The average patient wait time is **35.26 minutes**, while **40.68%** of patients are not seen within the 30-minute target window.
 
-**Business implication:** Hospital management should investigate the operational causes behind delays — such as peak-hour workload, department capacity, or process bottlenecks.
+**Business implication:** Management can investigate staffing levels, triage workflow, and peak-hour capacity to reduce avoidable delays.
 
-### 2. Waiting time needs continuous monitoring
+### 2. Admission demand is almost evenly split
 
-The current dashboard reports an average wait time of **34.90 minutes**.
+**50.04%** of patients were admitted and **49.96%** were not admitted.
 
-**Business implication:** Tracking this KPI over time can help management determine whether operational changes are reducing patient waiting periods.
+**Business implication:** The near 50–50 split makes admission analysis important for understanding bed/resource requirements and patient-flow planning.
 
-### 3. Patient satisfaction provides a second performance lens
+### 3. Patient satisfaction indicates an experience gap
 
-The current satisfaction score is **5.30/10**.
+The average satisfaction score is **4.99/10**.
 
-**Business implication:** Combining satisfaction with wait time and treatment timeliness gives a more complete view of patient experience than using volume alone.
+**Business implication:** Combining satisfaction with wait time and treatment timeliness provides a stronger view of patient experience than volume alone.
 
-### 4. General Practice carries the largest workload
+### 4. Referrals reveal department workload
 
-General Practice is the highest-volume department in the current dashboard view.
+**3,816 patients** were referred to departments. General Practice represents the largest referral workload, followed by Orthopedics, Physiotherapy, and Cardiology.
 
-**Business implication:** Department workload analysis can support staffing, capacity planning, and resource allocation.
+**Business implication:** Referral patterns can support department staffing, workload balancing, and capacity planning.
 
-### 5. Patient volume can be investigated by time and demographics
+### 5. Peak-period analysis can support staffing decisions
 
-The dashboard's time filters and demographic breakdowns allow analysts to identify when and which patient groups contribute most to ER demand.
+Day/hour analysis helps identify periods of higher ER demand.
+
+**Business implication:** Hospital management can use these patterns to plan staffing and resources around high-demand periods instead of relying only on daily averages.
 
 ---
 
@@ -133,12 +150,12 @@ The dashboard's time filters and demographic breakdowns allow analysts to identi
 ### Microsoft Excel
 
 - PivotTables
-- Dashboard design
-- Interactive slicers/filters
+- Interactive dashboard design
+- Slicers/filters
 - Charts
-- Sparklines
-- Conditional formatting
 - KPI reporting
+- Conditional formatting
+- Trend and demographic analysis
 
 ### Power Query
 
@@ -146,15 +163,18 @@ The dashboard's time filters and demographic breakdowns allow analysts to identi
 - Data cleaning
 - Data transformation
 - Data normalization
-- Preparation of structured analytical data
+- Column preparation
+- Structured analytical data preparation
 
 ### Analytical Skills
 
 - Healthcare operations analysis
 - KPI development
-- Trend analysis
-- Departmental comparison
 - Patient-flow analysis
+- Waiting-time analysis
+- Admission/referral analysis
+- Departmental comparison
+- Trend analysis
 - Business insight generation
 - Management reporting
 
@@ -166,11 +186,11 @@ This project is particularly relevant to **MIS Executive, Reporting Analyst, Dat
 
 It demonstrates the ability to:
 
-- Work with raw operational data
+- Work with a **9,216-record operational dataset**
 - Use **Power Query for practical data preparation**
 - Build an Excel reporting workflow
 - Create management-focused KPIs
-- Identify operational bottlenecks
+- Analyze service efficiency and patient flow
 - Compare departments and patient segments
 - Convert analysis into business recommendations
 
@@ -192,8 +212,8 @@ Hospital-Emergency-Room-Data/
 ## 🚀 How to Explore
 
 1. Start with the dashboard preview above.
-2. Review the main KPIs: patient volume, wait time, satisfaction, and treatment timeliness.
-3. Explore department, admission, demographic, and time-based views.
+2. Review the main KPIs: **9,216 patients, 35.26 min wait, 4.99/10 satisfaction, 50.04% admission, and 59.32% within the 30-minute target**.
+3. Explore admission, referral, demographic, and time-based views.
 4. Use filters to investigate specific periods or patient segments.
 5. Review the business insights to understand how the dashboard supports operational decision-making.
 
